@@ -1,0 +1,31 @@
+.flex-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FBF5F3;
+}
+header {
+  height: 40px;
+}
+footer {
+  height: 40px;
+  background-color: #BAD9B5;
+  color: #3A3042;
+}
+.contents {
+  flex: 1;
+}
+.controller {
+  display: flex;
+  justify-content: space-around;
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.time {
+  /* h:mm:ss.SSS */
+  font-size: 20vw;
+  width: 100%;
+  text-align: center; 
+  color: #2E86AB;
+}

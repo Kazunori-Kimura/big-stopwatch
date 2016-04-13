@@ -1,0 +1,20 @@
+{
+  "name": "speech-timer",
+  "description": "",
+  "main": "index.js",
+  "authors": [
+    "Kazunori Kimura <kazunori.kimura.js@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Honoka": "^3.3.6"
+  }
+}

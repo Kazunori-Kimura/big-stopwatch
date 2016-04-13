@@ -1,0 +1,22 @@
+{
+  "name": "speech-timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "browserify src/index.js -o public/lib/js/app.js"
+  },
+  "keywords": [],
+  "author": "Kazunori Kimura <kazunori.kimura.js@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "jquery": "^2.2.3"
+  },
+  "devDependencies": {
+    "browserify": "^13.0.0",
+    "co": "^4.6.0",
+    "fs-extra-promise": "^0.3.1",
+    "glob-promise": "^1.0.6"
+  }
+}
