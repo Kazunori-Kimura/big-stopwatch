@@ -1,5 +1,5 @@
 "use strict";
-const $ = require("jquery");
+//const $ = require("jquery");
 const Timer = require("./Timer");
 
 $(function(){
