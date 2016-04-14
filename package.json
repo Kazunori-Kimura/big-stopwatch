@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "browserify src/index.js -o public/lib/js/app.js"
+    "build": "browserify src/index.js -o gh-pages/lib/js/app.js",
+    "publish": "node publish.js"
   },
   "keywords": [],
   "author": "Kazunori Kimura <kazunori.kimura.js@gmail.com>",

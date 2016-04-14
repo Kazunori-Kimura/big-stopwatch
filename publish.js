@@ -19,9 +19,20 @@ const jquery_files = [
   "jquery.min.js",
   "jquery.min.map"
 ];
-const public_lib = "./public/lib";
+const public_dir = "gh-pages";
+const public_lib = `./${public_dir}/lib`;
+const wwwroot = "wwwroot";
 
 co(function* () {
+  // wwwroot配下のファイルをそのままgh-pagesにコピー
+  const files = yield glob("**/*", { cwd: wwwroot });
+  for (let i=0; i<files.length; i++) {
+    const src = path.resolve(wwwroot, files[i]);
+    const dist = path.resolve(public_dir, files[i]);
+    yield fs.copyAsync(src, dist);
+    console.log(`${files[i]} copied.`);
+  }
+  
   // bower_componentsの必要ファイルのみコピーする
   for (let i=0; i<honoka_files.length; i++) {
     const src = path.resolve(honoka_dist, honoka_files[i]);
