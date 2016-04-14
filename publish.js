@@ -25,7 +25,7 @@ const wwwroot = "wwwroot";
 
 co(function* () {
   // wwwroot配下のファイルをそのままgh-pagesにコピー
-  const files = yield glob("**/*", { cwd: wwwroot });
+  const files = yield glob("**/*.*", { cwd: wwwroot });
   for (let i=0; i<files.length; i++) {
     const src = path.resolve(wwwroot, files[i]);
     const dist = path.resolve(public_dir, files[i]);
