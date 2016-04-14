@@ -2,15 +2,15 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: #FBF5F3;
+  background-color: #F1F7ED;
 }
 header {
   height: 40px;
 }
 footer {
   height: 40px;
-  background-color: #BAD9B5;
-  color: #3A3042;
+  background-color: #3C3C3B;
+  color: #F1F7ED;
 }
 .contents {
   flex: 1;
@@ -27,5 +27,12 @@ footer {
   font-size: 20vw;
   width: 100%;
   text-align: center; 
-  color: #2E86AB;
+  color: #3C3C3B;
+}
+
+.measuring {
+  color: #2364AA;
+}
+.over {
+  color: #F06543;
 }
