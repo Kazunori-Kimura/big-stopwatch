@@ -35,14 +35,23 @@ class Timer {
   }
   
   /**
-   * 計測時間を取得する
-   * @type {string}
+   * 計測時間を取得する (ms)
+   * @type {number}
    */
   get time() {
     let elapsed = this.elapsedMs;
     if (this.isMeasuring) {
       elapsed = Date.now() - this.startMs + this.elapsedMs;
     }
+    return elapsed;
+  }
+  
+  /**
+   * 00:00:00形式で計測時間を取得する
+   * @type {string}
+   */
+  get formattedTime() {
+    let elapsed = this.time;
     const h = String(Math.floor(elapsed / 3600000) + 100).substring(1);
     const m = String(Math.floor((elapsed - h * 3600000)/60000)+ 100).substring(1);
     const s = String(Math.round((elapsed - h * 3600000 - m * 60000)/1000)+ 100).substring(1);
