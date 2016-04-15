@@ -2,28 +2,35 @@
 const co = require("co");
 const Timer = require("../src/Timer.js");
 
-co(function* (){
-  const timer = new Timer();
-  timer.start();
-  yield sleep(5000);
-  console.log(timer.time);
-  yield sleep(3000);
-  console.log(timer.time);
-  timer.stop();
-  console.log("timer stop.");
-  yield sleep(2000);
-  console.log("timer restart.");
-  timer.start();
-  yield sleep(2000);
-  console.log(timer.time);
-  timer.stop();
-  console.log("timer stop.");
-  timer.clear();
-  console.log("timer clear.");
-  console.log(timer.time);
-}).catch((err) => {
-  console.error(err);
-});
+// ギリギリのときの表示が変
+const t = new Timer();
+t.elapsedMs = 59900;
+console.log(t.formattedTime);
+
+function testStopWatch() {
+  co(function* () {
+    const timer = new Timer();
+    timer.start();
+    yield sleep(5000);
+    console.log(timer.time);
+    yield sleep(3000);
+    console.log(timer.time);
+    timer.stop();
+    console.log("timer stop.");
+    yield sleep(2000);
+    console.log("timer restart.");
+    timer.start();
+    yield sleep(2000);
+    console.log(timer.time);
+    timer.stop();
+    console.log("timer stop.");
+    timer.clear();
+    console.log("timer clear.");
+    console.log(timer.time);
+  }).catch((err) => {
+    console.error(err);
+  });
+}
 
 /**
  * sleep

@@ -19,9 +19,16 @@ footer {
 }
 .controller {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   width: 50vw;
   margin: 0 auto;
+}
+.controller-row {
+  padding-top: 10px;
+}
+.flex-around {
+  display: flex;
+  justify-content: space-around;
 }
 
 /* 時間表示 */

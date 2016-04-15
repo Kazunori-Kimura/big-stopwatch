@@ -22,15 +22,26 @@
   <div class="contents">
     <div class="time" id="time">00:00:00</div>
     <div class="controller">
-      <button class="btn btn-lg" id="start">
-        <span class="glyphicon glyphicon-play"></span> START
-      </button>
-      <button class="btn btn-lg" id="stop">
-        <span class="glyphicon glyphicon-stop"></span> STOP
-      </button>
-      <button class="btn btn-lg" id="clear">
-        <span class="glyphicon glyphicon-remove"></span> CLEAR
-      </button>
+      <div class="controller-row flex-around">
+        <button class="btn btn-lg" id="start">
+          <span class="glyphicon glyphicon-play"></span> START
+        </button>
+        <button class="btn btn-lg" id="stop">
+          <span class="glyphicon glyphicon-stop"></span> STOP
+        </button>
+        <button class="btn btn-lg" id="clear">
+          <span class="glyphicon glyphicon-remove"></span> CLEAR
+        </button>
+      </div>
+      <div class="controller-row">
+        <form class="inline-form">
+          <div class="form-group">
+            <label for="limit" class="sr-only">制限時間 (分)</label>
+            <input type="text" class="form-control" id="limit" placeholder="制限時間 (分)" aria-describedby="helpBlock">
+            <span class="help-block" id="helpBlock"></span>
+          </div>
+        </form>
+      </div>
     </div>
   </div>
   <footer>

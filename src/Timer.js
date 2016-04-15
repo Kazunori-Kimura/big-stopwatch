@@ -1,8 +1,13 @@
 "use strict";
 /**
- * Timer
+ * Timerクラス
+ * @class
  */
 class Timer {
+  /**
+   * コンストラクタ
+   * @constructor
+   */
   constructor() {
     this.startMs = 0;
     this.elapsedMs = 0;
@@ -54,7 +59,7 @@ class Timer {
     let elapsed = this.time;
     const h = String(Math.floor(elapsed / 3600000) + 100).substring(1);
     const m = String(Math.floor((elapsed - h * 3600000)/60000)+ 100).substring(1);
-    const s = String(Math.round((elapsed - h * 3600000 - m * 60000)/1000)+ 100).substring(1);
+    const s = String(Math.floor((elapsed - h * 3600000 - m * 60000)/1000)+ 100).substring(1);
     //const S = ("000" + elapsed).slice(-3);
     return `${h}:${m}:${s}`;
   }

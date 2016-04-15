@@ -5,7 +5,13 @@ const App = require("./constants");
 
 $(function () {
   let timer = new Timer();
+  // interval管理
   let t;
+  // 制限時間
+  let limit = 0;
+  
+  // 通常時メッセージを表示
+  $("#helpBlock").text(App.MSG_DEFAULT);
 
   // nav
   $("a.nav-item").on("click", (e) => {
@@ -83,6 +89,11 @@ $(function () {
     return `${leftPadZero(d.getHours())}:${leftPadZero(d.getMinutes())}:${leftPadZero(d.getSeconds())}`;
   }
 
+  /**
+   * 左0埋め2桁
+   * @param {number} val - 0埋めする数値
+   * @returns {string}
+   */
   function leftPadZero(val) {
     return ("00" + val).slice(-2);
   }
@@ -95,9 +106,13 @@ $(function () {
     }
     timer.start();
     $(this).addClass("active");
-    $("#time").removeClass("stoped").addClass("measuring");
+    $("#time").removeClass("stoped").addClass("measuring").removeClass("over");
     t = setInterval(() => {
       $("#time").text(timer.formattedTime);
+      
+      if (limit <= timer.time) {
+        $("#time").addClass("over");
+      }
     }, 256);
   });
 
@@ -117,11 +132,27 @@ $(function () {
   $("button#clear").on("click", () => {
     if (timer.IsMeasuring) {
       timer.stop();
-      $("#time").addClass("stoped").removeClass("measuring");
       clearInterval(t);
       $("button#start").removeClass("active");
     }
+    $("#time").addClass("stoped").removeClass("measuring").removeClass("over");
     timer.clear();
     $("#time").text(timer.formattedTime);
+  });
+  
+  // 時間制限
+  $("#limit").on("keyup", (e) => {
+    const val = $(e.target).val();
+    
+    if (isNaN(val)) {
+      $("#helpBlock").text(App.MSG_LIMIT_NAN);
+      $(e.target).parent().addClass("has-error");
+      limit = 0;
+      return;
+    }
+    
+    $(e.target).parent().removeClass("has-error");
+    $("#helpBlock").text(App.MSG_DEFAULT);
+    limit = parseInt(val, 10) * 60 * 1000; // min -> ms
   });
 });
