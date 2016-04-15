@@ -9,11 +9,17 @@ header {
   padding: 6px;
 }
 footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   height: 40px;
-  padding: 6px;
   background-color: #3C3C3B;
   color: #F1F7ED;
 }
+.footer-item {
+  width: 40vw;
+}
+
 .contents {
   flex: 1;
 }
