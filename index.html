@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ja">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,16 @@
   <link rel="stylesheet" href="lib/css/bootstrap.min.css">
   <link rel="stylesheet" href="lib/css/style.css">
 </head>
+
 <body class="flex-container">
+  <header>
+    <nav>
+      <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="#" class="nav-item" data-app-mode="stopwatch">ストップウォッチ</a></li>
+        <li role="presentation"><a href="#" class="nav-item" data-app-mode="clock">時計</a></li>
+      </ul>
+    </nav>
+  </header>
   <div class="contents">
     <div class="time" id="time">00:00:00</div>
     <div class="controller">
@@ -30,4 +40,5 @@
   <script src="lib/js/bootstrap.min.js"></script>
   <script src="lib/js/app.js"></script>
 </body>
+
 </html>

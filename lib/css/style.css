@@ -5,10 +5,12 @@
   background-color: #F1F7ED;
 }
 header {
-  height: 40px;
+  height: 60px;
+  padding: 6px;
 }
 footer {
   height: 40px;
+  padding: 6px;
   background-color: #3C3C3B;
   color: #F1F7ED;
 }
@@ -22,14 +24,15 @@ footer {
   margin: 0 auto;
 }
 
+/* 時間表示 */
 .time {
-  /* h:mm:ss.SSS */
   font-size: 20vw;
   width: 100%;
   text-align: center; 
+}
+.stoped {
   color: #3C3C3B;
 }
-
 .measuring {
   color: #2364AA;
 }
